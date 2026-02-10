@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: wheat;
+}
+
+.box{
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-direction: column;
+  /* gap: 1rem; */
+  padding: 2rem;
+  margin: 2rem;
+  
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+}
+
+input{
+  height: 3rem;
+  width: 15rem;
+}
+
+button{
+  padding-block: 1.2rem;
+  padding-inline: 1.2rem;
+  background-color: green;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+
