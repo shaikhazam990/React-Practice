@@ -1,12 +1,18 @@
 import { useState } from "react"
 
 const App = () => {
+    const [username, setUsername] = useState('')
+
+    const [allUser, setAllUser] = useState([])
   const submithandler=(e)=>{
     e.preventDefault()
-    console.log(username)
-    // setUsername('')
+
+    const newAllUser = [...allUser]
+    newAllUser.push(username)
+    setAllUser(newAllUser) 
+    console.log(newAllUser)
+    setUsername('')
   }
-  const [username, setUsername] = useState('')
   return (
     <main>
       <div className="form-conatiner">
