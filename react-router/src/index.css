@@ -1,0 +1,319 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(32, 32, 32);
+  color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   NAVBAR STYLES
+   ============================================ */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border-bottom: 2px solid #00d4ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Logo/Brand */
+.navbar__logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar__logo a {
+  text-decoration: none;
+  color: #00d4ff;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo a:hover {
+  color: #00a8cc;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Navbar Links List */
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navbar__links li {
+  position: relative;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.navbar__links a:hover {
+  color: #00d4ff;
+}
+
+/* Animated underline effect on hover */
+.navbar__links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4ff, #00a8cc);
+  transition: width 0.3s ease;
+}
+
+.navbar__links li a:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar__logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar__links {
+    gap: 1.5rem;
+  }
+
+  .navbar__links a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar__logo {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar__links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar__links a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================
+   ABOUT PAGE STYLES
+   ============================================ */
+
+.about-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1e1e1e 100%);
+}
+
+/* Profile Card */
+.profile-card {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  animation: slideUp 0.6s ease-out;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6),
+              0 0 50px rgba(0, 212, 255, 0.2);
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+/* Profile Image */
+.profile-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.profile-card:hover .profile-image {
+  transform: scale(1.05);
+}
+
+/* Profile Info Section */
+.profile-info {
+  padding: 2.5rem 2rem;
+}
+
+.profile-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.profile-info .role {
+  font-size: 1.1rem;
+  color: #00d4ff;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.profile-info .bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c0c0c0;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* Contact Information */
+.contact {
+  background: rgba(0, 212, 255, 0.05);
+  border-left: 3px solid #00d4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.contact p {
+  color: #e0e0e0;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.contact p:last-child {
+  margin-bottom: 0;
+}
+
+.contact strong {
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+.contact p:hover {
+  color: #00d4ff;
+  transform: translateX(5px);
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (ABOUT PAGE)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .profile-card {
+    max-width: 100%;
+  }
+
+  .profile-info h2 {
+    font-size: 1.7rem;
+  }
+
+  .profile-info {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-image {
+    height: 250px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-info .role {
+    font-size: 0.95rem;
+  }
+
+  .profile-info {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact {
+    padding: 1rem;
+  }
+
+  .contact p {
+    font-size: 0.9rem;
+  }
+}
+
