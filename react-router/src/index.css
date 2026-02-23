@@ -317,3 +317,176 @@ html, body {
   }
 }
 
+/* ============================================
+   APP CONTAINER STYLES
+   ============================================ */
+
+#root {
+  min-height: 100vh;
+  background: rgb(32, 32, 32);
+  display: flex;
+  flex-direction: column;
+}
+
+div[role="main"],
+.app-container {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content wrapper */
+main,
+[role="main"] {
+  flex: 1;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Routes transition animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page containers */
+.page-container {
+  flex: 1;
+  min-height: calc(100vh - 80px);
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:visited {
+  color: inherit;
+}
+
+/* Body text defaults */
+body {
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+/* ============================================
+   UTILITY STYLES
+   ============================================ */
+
+/* Container utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.container-sm {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.container-lg {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* Flexbox utilities */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #888888;
+}
+
+.text-success {
+  color: #00d4ff;
+}
+
+.text-error {
+  color: #ff6b6b;
+}
+
+/* Spacing utilities */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+
+/* Button basic style */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container,
+  .container-sm,
+  .container-lg {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .container-sm,
+  .container-lg {
+    padding: 0 1rem;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
